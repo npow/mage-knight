@@ -4,6 +4,8 @@ A solo conquest game of exploration, combat, and deck building set in the Atlant
 
 Based on the board game by Vlaada Chvátil, published by WizKids.
 
+![Gameplay](screenshots/gameplay.png)
+
 ## The Game
 
 You are a Mage Knight, one of the most powerful beings in the land. You carry a deck of action cards that let you march across the countryside, smash through enemy defenses, influence local villages, and channel mana into devastating spells. Every card in your hand is a decision: play it for a basic effect, burn mana to power it up, or toss it sideways for a single point of whatever you need most right now.
@@ -13,6 +15,16 @@ The map starts as a single tile. Move to the edge and new terrain unfolds — fo
 Combat runs in phases. Ranged attacks hit first. Then you block (or don't). Then whatever damage gets through the cracks becomes wounds — dead-weight cards that clog your hand for the rest of the game. Then you swing back. Enemies have armor, abilities like Fortified or Brutal, and the dragons are exactly as nasty as you'd expect.
 
 Between fights you level up, learn skills, gain advanced actions and spells, recruit units at villages, and collect mana crystals from mines. By the end, your lean starting deck has become a sprawling engine of destruction. Or you ran out of time and the cities still stand. It happens.
+
+## Screenshots
+
+| Title Screen | Hero Select |
+|:---:|:---:|
+| ![Title Screen](screenshots/title-screen.png) | ![Hero Select](screenshots/hero-select.png) |
+
+| Scenario Select | Card Actions |
+|:---:|:---:|
+| ![Scenario Select](screenshots/scenario-select.png) | ![Card Actions](screenshots/card-selected.png) |
 
 ## Heroes
 
