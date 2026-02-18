@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mage Knight - The Digital Board Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Full-screen overlay for menus -->
+    <div id="overlay"></div>
+
+    <!-- Main game area -->
+    <div id="game-area" style="display: none;">
+        <!-- Left panel: Hero info -->
+        <div id="left-panel" class="panel">
+            <div id="hero-panel"></div>
+        </div>
+
+        <!-- Center: Map + Hand -->
+        <div id="center-area">
+            <!-- Top bar -->
+            <div id="top-bar">
+                <div id="round-info"></div>
+                <div id="scenario-info"></div>
+            </div>
+
+            <!-- Map canvas -->
+            <div id="map-container">
+                <canvas id="map-canvas"></canvas>
+                <div id="hex-tooltip" class="tooltip"></div>
+            </div>
+
+            <!-- Action bar -->
+            <div id="action-bar"></div>
+
+            <!-- Hand of cards -->
+            <div id="hand-area">
+                <div id="hand-label">Hand</div>
+                <div id="hand-cards"></div>
+                <div id="card-options"></div>
+            </div>
+        </div>
+
+        <!-- Right panel: Mana, Points, Log -->
+        <div id="right-panel" class="panel">
+            <div id="mana-source"></div>
+            <div id="points-display"></div>
+            <div id="tiles-info"></div>
+            <div class="section-label">Game Log</div>
+            <div id="game-log"></div>
+        </div>
+
+        <!-- Combat overlay panel -->
+        <div id="combat-panel"></div>
+    </div>
+
+    <!-- Scripts (loaded in order) -->
+    <script src="js/data.js"></script>
+    <script src="js/hex.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
