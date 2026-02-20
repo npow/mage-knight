@@ -10,11 +10,11 @@ Based on the board game by Vlaada Chvátil, published by WizKids.
 
 You are a Mage Knight, one of the most powerful beings in the land. You carry a deck of action cards that let you march across the countryside, smash through enemy defenses, influence local villages, and channel mana into devastating spells. Every card in your hand is a decision: play it for a basic effect, burn mana to power it up, or toss it sideways for a single point of whatever you need most right now.
 
-The map starts as a single tile. Move to the edge and new terrain unfolds — forests, hills, keeps garrisoned by orcs, mage towers crackling with arcane energy, and eventually the cities you've come to conquer. Every hex costs movement, and the costs change when the sun goes down. Night turns forests into near-impassable tangles and flips gold mana to black.
+The map starts as a single tile. Move to the edge and new terrain unfolds — forests with layered tree canopies, rolling hills with contour lines, snow-capped mountain peaks, gently rippling lakes, and eventually the fortified cities you've come to conquer. Gold tile boundaries mark where one map tile ends and the next begins. Every hex costs movement, and the costs change when the sun goes down — night casts a blue pall over the land and flips gold mana to black.
 
-Combat runs in phases. Ranged attacks hit first. Then you block (or don't). Then whatever damage gets through the cracks becomes wounds — dead-weight cards that clog your hand for the rest of the game. Then you swing back. Enemies have armor, abilities like Fortified or Brutal, and the dragons are exactly as nasty as you'd expect.
+Combat runs in phases, tracked by a progress bar: **Ranged → Block → Damage → Attack → Resolve**. A damage visualization shows exactly how much incoming damage you face, how much you've blocked, and how many wounds are coming through. Enemies display their armor as pip bars and their abilities as tooltip badges — no more guessing what "fortified" means. Phase-specific warnings flash when enemies have relevant abilities.
 
-Between fights you level up, learn skills, gain advanced actions and spells, recruit units at villages, and collect mana crystals from mines. By the end, your lean starting deck has become a sprawling engine of destruction. Or you ran out of time and the cities still stand. It happens.
+Between fights you level up (with animated notifications), learn skills, gain advanced actions and spells, recruit units at villages, and collect mana crystals from mines. A turn guidance strip at the top shows your current phase — **Play Cards → Move → Interact → End Turn** — with contextual hints so you always know what to do next.
 
 ## Screenshots
 
@@ -26,6 +26,18 @@ Between fights you level up, learn skills, gain advanced actions and spells, rec
 |:---:|:---:|
 | ![Scenario Select](screenshots/scenario-select.png) | ![Card Actions](screenshots/card-selected.png) |
 
+## Features
+
+- **Canvas-drawn icons** — All site, enemy, hero, and UI icons are vector-drawn on canvas. No emoji, no external assets. Consistent rendering across all platforms.
+- **Rich terrain textures** — Procedurally generated with deterministic seeding: layered forests, contoured hills, rocky mountains with snow caps, animated water ripples, murky swamp pools with dead stumps, cracked wastelands, windswept desert dunes, and subtle grass strokes on plains.
+- **Turn guidance system** — Phase strip shows where you are in the turn. Contextual hints explain what you can do. No more staring at the screen wondering what's next.
+- **MK-style card design** — Thick colored side borders, parchment name bar, split basic/powered effect sections with type icons, glowing mana dots.
+- **Combat phase bar** — Visual progress through combat phases with damage visualization, armor pip bars, ability badges with tooltips, and phase-specific enemy warnings.
+- **Notifications** — Animated overlay toasts for level-ups, round transitions (dawn/night), and major events.
+- **Tile boundaries** — Gold lines between map tiles so you can see the tile grid at a glance.
+- **Night mode** — Blue tint overlay dims the map when the sun goes down.
+- **Interactive site glow** — Pulsing gold ring when your hero stands on an interactive site.
+
 ## Heroes
 
 - **Tovak the Stubborn** — Defensive specialist. Endures where others fall. Starts with Ice Block and Battle Versatility.
@@ -35,9 +47,9 @@ Between fights you level up, learn skills, gain advanced actions and spells, rec
 
 ## Scenarios
 
-- **First Reconnaissance** — 3 rounds. Explore the land and conquer a keep. The introductory scenario.
-- **Solo Conquest** — 6 rounds. Build your power and conquer a city before time runs out.
-- **Full Conquest** — 6 rounds. Conquer every city on the map. Good luck.
+- **First Reconnaissance** — 3 rounds, Easy. Explore the land and conquer a keep. The introductory scenario.
+- **Solo Conquest** — 6 rounds, Medium. Build your power and conquer a city before time runs out.
+- **Full Conquest** — 6 rounds, Hard. Conquer every city on the map. Good luck.
 
 ## Playing
 

@@ -942,4 +942,57 @@ MK.Colors = {
     }
 };
 
+// ----------------------------------------------------------
+// ABILITY DESCRIPTIONS (player-friendly text)
+// ----------------------------------------------------------
+MK.AbilityDescriptions = {
+    fortified:       'Immune to ranged attacks',
+    swift:           'Attacks before you can block',
+    brutal:          'Unblocked damage is doubled',
+    poison:          'Wounds directly (ignores armor)',
+    paralyze:        'Blocks your attack if it damages you',
+    fire_attack:     'Deals fire damage',
+    ice_attack:      'Deals ice damage',
+    cold_fire:       'Deals fire + ice damage',
+    fire_resist:     'Half damage from fire',
+    ice_resist:      'Half damage from ice',
+    physical_resist: 'Half physical damage',
+    elusive:         'Hard to block efficiently',
+    cumbersome:      'Attack reduced when blocked',
+    arcane:          'Weak to ColdFire attacks',
+    summoner:        'Can summon reinforcements'
+};
+
+// ----------------------------------------------------------
+// CANVAS ICON MAPPINGS
+// ----------------------------------------------------------
+MK.HeroIcons = {
+    tovak: 'shield',
+    norowas: 'staff',
+    arythea: 'flame',
+    goldyx: 'dragonHead'
+};
+
+MK.SiteIcons = {
+    village: 'village', monastery: 'monastery', keep: 'keep',
+    mage_tower: 'mageTower', dungeon: 'dungeon', tomb: 'tomb',
+    mine_red: 'mine', mine_blue: 'mine', mine_green: 'mine', mine_white: 'mine',
+    ancient_ruins: 'ancientRuins', spawning_grounds: 'spawningGrounds',
+    draconum_lair: 'draconumLair', magical_glade: 'magicalGlade',
+    city_green: 'city', city_blue: 'city', city_red: 'city', city_white: 'city'
+};
+
+MK.EnemyIcons = {
+    orc_prowlers: 'orc', orc_marauders: 'orc', orc_summoner: 'mage',
+    orc_swordsmen: 'sword', guardsmen: 'guard', monks: 'monk',
+    illusionists: 'mage', ice_mages: 'mage', fire_mages: 'mage',
+    fire_dragon: 'dragon', ice_dragon: 'dragon', swamp_dragon: 'dragon',
+    altem_mages: 'mage', altem_guardians: 'guard', freezers: 'mage'
+};
+
+MK.EffectIcons = {
+    move: 'boot', attack: 'sword', ranged_attack: 'bow',
+    block: 'shieldSmall', influence: 'coin', heal: 'heart', special: 'star'
+};
+
 window.MK = MK;

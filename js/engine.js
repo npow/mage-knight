@@ -76,7 +76,10 @@ const State = {
     spellOffer: [],
 
     // Conquered sites
-    conqueredSites: new Set()
+    conqueredSites: new Set(),
+
+    // Notifications queue
+    notifications: []
 };
 
 // ----------------------------------------------------------
@@ -91,6 +94,65 @@ Engine.getState = function() {
 Engine.log = function(msg, type = 'info') {
     State.log.unshift({ msg, type, time: Date.now() });
     if (State.log.length > 100) State.log.pop();
+};
+
+Engine.notify = function(title, subtitle, duration) {
+    State.notifications.push({ title, subtitle, duration: duration || 3000, time: Date.now() });
+};
+
+Engine.getTurnGuidance = function() {
+    if (State.phase === 'combat' && State.combat) {
+        const p = State.combat.phase;
+        const hints = {
+            ranged: 'Play cards for ranged attacks against enemies.',
+            block: 'Play cards to block incoming enemy damage.',
+            damage: 'Damage is being assigned...',
+            attack: 'Play cards for melee attacks, then resolve.',
+            resolve: 'Resolving combat results...'
+        };
+        return {
+            phase: 'combat',
+            step: p,
+            hint: hints[p] || '',
+            steps: ['ranged', 'block', 'damage', 'attack', 'resolve']
+        };
+    }
+
+    if (State.phase === 'playing') {
+        if (State.interacting) {
+            const siteNames = { village: 'Village', monastery: 'Monastery' };
+            return {
+                phase: 'interact',
+                step: 'interact',
+                hint: `At ${siteNames[State.interacting.type] || State.interacting.type}. Use influence to recruit, heal, or interact.`,
+                steps: ['cards', 'move', 'interact', 'end']
+            };
+        }
+        if (State.movePoints > 0) {
+            return {
+                phase: 'move',
+                step: 'move',
+                hint: `${State.movePoints} move points. Click a highlighted hex to move.`,
+                steps: ['cards', 'move', 'interact', 'end']
+            };
+        }
+        if (State.cardsPlayedThisTurn === 0) {
+            return {
+                phase: 'play',
+                step: 'cards',
+                hint: 'Play cards from your hand for movement, combat, influence, or healing.',
+                steps: ['cards', 'move', 'interact', 'end']
+            };
+        }
+        return {
+            phase: 'play',
+            step: 'cards',
+            hint: 'Continue playing cards or end your turn.',
+            steps: ['cards', 'move', 'interact', 'end']
+        };
+    }
+
+    return { phase: State.phase, step: '', hint: '', steps: [] };
 };
 
 // ----------------------------------------------------------
@@ -150,7 +212,8 @@ Engine.initGame = function(heroId, scenarioId) {
         unitOffer: [],
         advancedActionOffer: [],
         spellOffer: [],
-        conqueredSites: new Set()
+        conqueredSites: new Set(),
+        notifications: []
     });
 
     // Goldyx bonus
@@ -1053,6 +1116,7 @@ Engine.checkLevelUp = function() {
             State.armor = entry.armor;
 
             Engine.log(`LEVEL UP! Now level ${entry.level}!`, 'level');
+            Engine.notify('Level Up!', `Level ${entry.level}`, 3000);
 
             if (entry.reward === 'advanced_action_or_spell') {
                 // Add a random advanced action or spell to deck
@@ -1153,6 +1217,7 @@ Engine.endRound = function() {
 
     const timeOfDay = State.isDay ? 'Day' : 'Night';
     Engine.log(`Round ${State.round} - ${timeOfDay} begins!`, 'system');
+    Engine.notify(State.isDay ? 'Dawn Breaks' : 'Night Falls', `Round ${State.round} begins`, 4000);
 };
 
 // ----------------------------------------------------------
