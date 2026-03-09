@@ -1,5 +1,7 @@
 # Mage Knight
 
+[![Docs](https://img.shields.io/badge/docs-mintlify-18a34a?style=flat-square)](https://mintlify.com/npow/mage-knight)
+
 A solo conquest game of exploration, combat, and deck building set in the Atlantean lands. Lead a powerful Mage Knight deep into uncharted territory — conquering keeps, raiding dungeons, fighting dragons, and commanding armies — as day turns to night and the land reveals its secrets one hex at a time.
 
 Based on the board game by Vlaada Chvátil, published by WizKids.
